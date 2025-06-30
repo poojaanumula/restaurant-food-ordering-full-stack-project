@@ -1,5 +1,23 @@
 .navbar{
     width: 100%;
     padding:30px;
-    background-color: red;
+    background-color:black;
+    color:white;
+    h1{
+        color:red;
+        text-align: center;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 40px;
+    }
+   
 }
+.link{
+        display: flex;
+        gap:20px;
+        justify-content: flex-end;
+        text-align:right;
+        color:white;
+        a{
+            color:white;
+        }
+    }
