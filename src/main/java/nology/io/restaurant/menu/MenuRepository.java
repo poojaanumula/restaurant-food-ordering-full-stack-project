@@ -1,5 +1,7 @@
 package nology.io.restaurant.menu;
 
-public class MenuRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MenuRepository extends JpaRepository<Menu, Long>  {
 
 }

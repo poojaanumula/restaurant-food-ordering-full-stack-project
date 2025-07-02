@@ -22,7 +22,7 @@ const Chef_Login = () => {
       <form onSubmit={submitForm}>
         <div>
             <label>UserName</label>
-            <input type='text' value={user} onChange={(e)=> setUser(e.target.value)}/>
+            <input type='text' value={user} onChange={(e)=> setUser(e.target.value)} />
         </div>
         <div>
             <label>Password</label>
