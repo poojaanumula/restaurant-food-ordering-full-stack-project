@@ -1,0 +1,61 @@
+.background {
+  width: 700px;
+  padding: 20px;
+  margin: 2rem auto;
+}
+.title {
+  font-size: 30px;
+
+  text-align: center;
+}
+.border {
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.status {
+  font-weight: bold;
+  font-size: 20px;
+  color: red;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.para {
+  font-size: 18px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.tableNumber {
+  font-size: 20px;
+  font-weight: bold;
+}
+.row {
+  display: flex;
+  gap: 120px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.btn {
+  padding: 6px;
+  width: 150px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.ready {
+  background-color: red;
+}
+
+.preparing {
+  background-color: gray;
+}
+.text {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}

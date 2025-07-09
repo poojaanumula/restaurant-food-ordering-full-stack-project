@@ -1,30 +1,73 @@
-import Classes from './Chef.module.scss';
+import { useEffect, useState } from "react";
+import Classes from "./Chef.module.scss";
+import { postOrderStatus } from "../../services/restaurant-service";
+import {
+  getOrders,
+  type orderDetails,
+} from "../../services/restaurant-service";
 
 const Chef = () => {
-  const tablenNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12];
-  const rows: number[][] = [];
-  for (let i = 0; i < tablenNumbers.length; i += 3) {
-    rows.push(tablenNumbers.slice(i, i + 3)); 
-  }
-  return (
-    <div>
-      <h2>Chef...</h2>
-       <div>Notifications</div>
-      <table className={Classes.tableStyle}>
-        <tbody>
-          {rows.map((row, index) => (
-            <tr key={index}>
-              {row.map((number) => (
-                <td key={number} className={Classes.tableRow}>
-                  {number}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  )
-}
+  const [orders, setOrders] = useState<orderDetails[]>([]);
 
-export default Chef
+  useEffect(() => {
+    const fetchOrders = async () => {
+      try {
+        const response = await getOrders();
+        setOrders(response.filter((o) => o.status !== "READY"));
+      } catch (err) {
+        console.log("Failed to load", err);
+      }
+    };
+    fetchOrders();
+  }, []);
+
+  const updateStatus = async (orderId: number) => {
+    try {
+      await postOrderStatus(orderId, "READY");
+      setOrders((prev) => prev.filter((o) => o.id !== orderId));
+    } catch (err) {
+      console.log("Failed to update status", err);
+    }
+  };
+
+  return (
+    <>
+       
+      {orders.length > 0 ? 
+      
+          (
+        orders.map((order) => (
+          <>
+            <div className={Classes.background}>
+              <table className={Classes.table}>
+                <tr>
+                  <td className={Classes.tableNumber}>Table Number: {order.tableNumber}</td>
+                  <td className={Classes.items}>
+                    
+                    {order.items.map((item) => (
+                      <div className={Classes.dishes}>
+                          <li className={Classes.list}>{item.itemName}</li>
+                      </div>
+                    ))}
+                  </td>
+                  <td className={Classes.status}>{order.status}</td>
+                  <td className={Classes.changeStatus}>
+                    {order.status !== "READY" && (
+                      <button onClick={() => updateStatus(order.id)} className={Classes.btn}>
+                        Ready to Pick up
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </>
+        ))
+      ) : (
+        <div className={Classes.text}>No orders so far...</div>
+      )}
+    </>
+  );
+};
+
+export default Chef;

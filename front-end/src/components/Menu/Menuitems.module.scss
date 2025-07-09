@@ -1,15 +1,52 @@
-.btn{
-    padding:3px;
-    margin:10px;
-    width:100px;
-    font-size: 20px;
-    cursor: pointer;
+.btn {
+  padding: 3px;
+  margin: 10px;
+  width: 100px;
+  font-size: 20px;
+  cursor: pointer;
 }
-.orders{
-    display: flex;
-    justify-content: flex-end;
-    text-align: end;
-    display: block;
-    color:white;
+.itemRow {
+  display: flex;
+  align-items: center;
+}
+
+.actionBtn {
+  margin-left: auto;
+}
+.orders {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 12px;
+  border: 2px solid white;
+  color: rgb(4, 2, 2);
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  &:hover {
     background-color: red;
+    transition: 1s;
+    color: white;
+  }
+}
+
+.orderPlaced {
+  background-color: red;
+}
+.display {
+  width: 700px;
+  position: relative;
+}
+.heading {
+  margin-top: 60px;
+  color: white;
+  font-size: 25px;
+  font-family: cursive;
+}
+.span {
+  color: black;
+  font-size: 18px;
+  font-family: cursive;
 }

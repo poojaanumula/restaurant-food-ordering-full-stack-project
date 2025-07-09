@@ -1,11 +1,71 @@
-.tableStyle{
-    width:500px;
-    height: 500px;
-    background-color: lightgoldenrodyellow;
-    margin-top: 10%;
-    margin-left: 10%;
+.tableStyle {
+  width: 500px;
+  height: 500px;
+  background-color: lightgoldenrodyellow;
+  margin-top: 10%;
+  margin-left: 10%;
 }
-.tableRow{
-    border:2px solid black;
+.tableRow {
+  border: 2px solid black;
+  text-align: center;
+}
+.background {
+  background-color: tomato;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  color: white;
+}
+.table {
+  width: 700px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
+.tableNumber {
+  width: 10%;
+  color: white;
+}
+.items {
+  width: 60%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  padding: 30px;
+}
+.tableNum{
+    color:white;
+}
+.dishes{
+    display: block;
+    color:white;
+}
+.list{
     text-align: center;
+    list-style: none;
+}
+.status{
+    width:10%;
+}
+.changeStatus{
+    width:50%;
+}
+.btn{
+    padding: 6px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover{
+        background-color: red;
+        color:white;
+        transition: 1s;
+    }
+    
+}
+.text{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 30px;
+    font-weight: bold;
 }

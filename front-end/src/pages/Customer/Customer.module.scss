@@ -1,10 +1,70 @@
-
-.tableStyle{
-    width:500px;
-    height: 500px;
-    background-color: lightgoldenrodyellow;
+.tableStyle {
+  width: 500px;
+  height: 500px;
+  background-color: lightgoldenrodyellow;
 }
-.tableRow{
-    border:2px solid black;
-    text-align: center;
+.tableRow {
+  border: 2px solid black;
+  text-align: center;
+}
+.background {
+  background-color: rgb(246, 116, 93);
+  width: 100%;
+  height: 580vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1vh;
+}
+.form {
+  color: white;
+  width: 600px;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 35px;
+  font-family: cursive;
+  font-weight: bold;
+}
+.number {
+  font-size: 15px;
+  font-family: cursive;
+  border: 1px solid red;
+  padding: 20px;
+  margin-top: 30px;
+}
+.label {
+  margin-top: 10px;
+  font-family: cursive;
+  font-size: 15px;
+  text-align: center;
+}
+.input {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn {
+  width: 120px;
+  border: 2px solid white;
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 5px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
 }

@@ -1,4 +1,66 @@
-.delete{
-    border:1px solid red;
-    padding: 5px;
+.fullPage {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(246, 116, 93);
+  overflow-y: auto;
+  padding-top: 50px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  z-index: 1000;
+  text-align: center;
+  color: white;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+.title {
+  font-size: 30px;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.name {
+  display: flex;
+  align-items: center;
+  margin: 10px auto;
+  width: 500px;
+  justify-content: space-between;
+}
+.placeOrder {
+  padding: 10px;
+  border: 1px solid white;
+  margin-top: 10px;
+  border-radius: 10px;
+  width: 150px;
+  &:hover {
+    background-color: red;
+    color: white;
+    transition: 1s;
+    cursor: pointer;
+  }
+}
+.total {
+  font-size: 25px;
+  margin-top: 20px;
+}
+.delete {
+  padding: 5px;
+  border: 1.5px solid white;
+  width: 100px;
+  background-color: transparent;
+  font-weight: bold;
+  color: white;
+  &:hover {
+    background: red;
+    color: white;
+    transition: 1s;
+    cursor: pointer;
+  }
 }

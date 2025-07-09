@@ -2,7 +2,7 @@ import { postMenu } from "../../services/restaurant-service";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { menuItemSchema, type MenuItem } from "./SchemaFile";
-import Navbar from "../../components/Navbar/Navbar";
+import Classes from "./Dashboard.module.scss";
 
 const Dashboard = () => {
   const {
@@ -16,40 +16,66 @@ const Dashboard = () => {
 
   const onSubmit = (data: MenuItem) => {
     postMenu(data)
-      .then(() => console.log("Menu item added"))
+      .then(() => alert("Menu item added"))
       .catch((err) => console.error("Add failed:", err))
       .finally(() => reset());
   };
 
   return (
-    <div>
-      <Navbar />
-      <h2>Add a new Item</h2>
-
+    <div className={Classes.background}>
+      <h2 className={Classes.title}>Add a new Item</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label>Item Name</label>
-          <input type="text" {...register("itemName")} />
-          {errors.itemName && <p>{errors.itemName.message}</p>}
+          <div className={Classes.section}>
+            <label className={Classes.name}>Item Name</label>
+            <input
+              type="text"
+              {...register("itemName")}
+              className={Classes.textBox}
+            />
+          </div>
+          {errors.itemName && (
+            <p className={Classes.errorMsg}>{errors.itemName.message}</p>
+          )}
         </div>
         <div>
-          <label>Price</label>
-          <input type="number" step="0.01" {...register("itemPrice")} />
-          {errors.itemPrice && <p>{errors.itemPrice.message}</p>}
+          <div className={Classes.section}>
+            <label className={Classes.name}>Price</label>
+            <input
+              type="number"
+              step="0.01"
+              {...register("itemPrice")}
+              className={Classes.textBox}
+            />
+          </div>
+          {errors.itemPrice && (
+            <p className={Classes.errorMsg}>{errors.itemPrice.message}</p>
+          )}
         </div>
         <div>
-          <label>Category</label>
-          <select {...register("category")}>
-            <option value="">Choose</option>
-            <option value="ENTREES">Entrees</option>
-            <option value="MAINS">Mains</option>
-            <option value="KIDS">Kids Special</option>
-            <option value="DESSERTS">Desserts</option>
-          </select>
-          {errors.category && <p>{errors.category.message}</p>}
+          <div className={Classes.section}>
+            <label className={Classes.name}>Category</label>
+            <select
+              {...register("category")}
+              className={Classes.selectOption}
+              defaultValue=""
+            >
+              <option value="">Choose</option>
+              <option value="ENTREES">Entrees</option>
+              <option value="MAINS">Mains</option>
+              <option value="KIDS">Kids Special</option>
+              <option value="DESSERTS">Desserts</option>
+            </select>
+          </div>
+
+          {errors.category && (
+            <p className={Classes.errorMsg}>{errors.category.message}</p>
+          )}
         </div>
 
-        <button type="submit">Add an item</button>
+        <button type="submit" className={Classes.btn}>
+          Add an item
+        </button>
       </form>
     </div>
   );
