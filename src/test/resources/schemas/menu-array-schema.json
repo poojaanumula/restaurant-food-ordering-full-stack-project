@@ -1,0 +1,20 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema#",
+    "type" : "object",
+    "properties": {
+      "id": { "type": "number" },
+      "itemName": {"type":"string"},
+      "itemPrice":{"type":"number"},
+      "category" : {
+        "type":"string",
+        "enum": [
+            "ENTREES",
+            "MAINS",
+            "KIDS",
+            "DESSERTS"
+        ]
+      }
+       
+    },
+ "required": ["itemName","itemPrice","category"]
+ }

@@ -15,25 +15,26 @@
 }
 .orders {
   position: absolute;
+  margin-top: 20px;
   top: 0;
   right: 0;
   padding: 10px 12px;
-  border: 2px solid white;
-  color: rgb(4, 2, 2);
+  background-color: black;
+  border: 2px solid black;
+  color: white;
   font-weight: bold;
   cursor: pointer;
-  border: none;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 14px;
   &:hover {
-    background-color: red;
+    background-color: greenyellow;
     transition: 1s;
-    color: white;
+    color:black;
   }
 }
 
 .orderPlaced {
-  background-color: red;
+  background-color: greenyellow;
 }
 .display {
   width: 700px;
@@ -41,7 +42,7 @@
 }
 .heading {
   margin-top: 60px;
-  color: white;
+  color: black;
   font-size: 25px;
   font-family: cursive;
 }

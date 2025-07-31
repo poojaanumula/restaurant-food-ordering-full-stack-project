@@ -27,18 +27,21 @@ export interface NewOrder {
   }[];
   status: OrderStatus;
 }
-export const postMenu = async (data: Menu) => {
+
+export const postMenu = async (data: any, username: string, password: string) => {
+  const basicAuth = btoa(`${username}:${password}`); 
   try {
     const response = await axios.post("http://localhost:8080/menu", data, {
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Basic ${basicAuth}`, 
       },
     });
-    return response.data as Menu;
-  } catch (error: any) {
-    if (error.response) {
-      throw new Error(error.response.data || "Something went wrong!");
-    }
+    console.log(response.data, "RESP")
+    return response.data;
+    
+  } catch (err) {
+    console.error("Add failed:", err);
     throw new Error("Something went wrong!");
   }
 };
@@ -74,13 +77,23 @@ export const getOrders = async (): Promise<orderDetails[]> => {
   }
 };
 
-export const postOrderStatus = async (orderId: number, status: OrderStatus) => {
+export const postOrderStatus = async (
+  orderId: number,
+  status: OrderStatus,
+  username: string,
+  password: string
+) => {
+  const basicAuth = btoa(`${username}:${password}`);
+
   try {
     const response = await axios.patch(
       `http://localhost:8080/orders/${orderId}/status`,
       { status },
       {
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Basic ${basicAuth}`,
+        },
       }
     );
     return response.data;
@@ -89,6 +102,7 @@ export const postOrderStatus = async (orderId: number, status: OrderStatus) => {
     throw err;
   }
 };
+
 export const deleteOrder = async (id: number) => {
   await axios.delete(`http://localhost:8080/orders/${id}`);
 };

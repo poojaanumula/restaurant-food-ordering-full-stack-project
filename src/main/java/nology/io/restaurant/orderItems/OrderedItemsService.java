@@ -13,9 +13,6 @@ public class OrderedItemsService {
         return orderedItemsRepository.save(orderItem);
     }
 
-public void deleteOrderById(Long id) {
-    orderRepository.deleteById(id);
-}
 
 
 }

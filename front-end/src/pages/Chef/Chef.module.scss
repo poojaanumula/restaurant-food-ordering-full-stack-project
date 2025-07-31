@@ -1,3 +1,65 @@
+.loginbackground{
+  background-color:#FAFAD2;
+  height: 100vh;
+  color: black;
+  padding: 20px;
+  text-align: center;
+}
+.logintitleDisplay {
+  display: flex;
+  text-align: center;
+  padding-top: 30px;
+  justify-content: center;
+}
+.logintitle {
+  font-size: 30px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.photo {
+  width: 100px;
+  margin-top: 0;
+  margin-top: -30px;
+}
+.border {
+  margin-bottom: 30px;
+}
+.loginname {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.loginsection {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.logintextBox {
+  width: 200px;
+  padding: 4px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.btn {
+  width: 150px;
+  padding: 5px;
+  border: 2px solid black;
+  color:white;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 10px;
+  &:hover {
+    background-color: red;
+    color:black;
+    transition: 1s;
+  }
+}
+
+
 .tableStyle {
   width: 500px;
   height: 500px;
@@ -10,12 +72,12 @@
   text-align: center;
 }
 .background {
-  background-color: tomato;
+  background-color: lightgoldenrodyellow;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 70px;
-  color: white;
+  color: black;
 }
 .table {
   width: 700px;
@@ -23,8 +85,8 @@
   text-align: center;
 }
 .tableNumber {
-  width: 10%;
-  color: white;
+  width: 20%;
+  color: black;
 }
 .items {
   width: 60%;
@@ -34,11 +96,11 @@
   padding: 30px;
 }
 .tableNum{
-    color:white;
+    color:black;
 }
 .dishes{
     display: block;
-    color:white;
+    color:black;
 }
 .list{
     text-align: center;
@@ -56,8 +118,8 @@
     border-radius: 10px;
     cursor: pointer;
     &:hover{
-        background-color: red;
-        color:white;
+        background-color:greenyellow;
+        color:black;
         transition: 1s;
     }
     

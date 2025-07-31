@@ -11,16 +11,17 @@ const Customer = () => {
     const val = e.target.value;
     setTableNumber(val);
   };
-  
+
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setTableSelected(true);
     setHideForm(false);
   };
+
   return (
     <div className={Classes.background}>
       {hideForm && (
-        <form onSubmit={submitHandler} className={Classes.form}>
+        <form onSubmit={submitHandler} className={Classes.form} title="form">
           <div className={Classes.center}>
             <p className={Classes.title}>Welcome to Spice Corner!</p>
             <div className={Classes.label}>
@@ -33,19 +34,17 @@ const Customer = () => {
                 onChange={handleChange}
                 max={12}
                 min={1}
-                defaultValue={""}
                 className={Classes.input}
                 placeholder="Enter number from 1 to 12"
                 required
               />
             </div>
-            <button type="submit" className={Classes.btn}>
+            <button type="submit" className={Classes.btn} title="btn">
               Enter
             </button>
           </div>
         </form>
       )}
-
       {tableSelected && <Menuitems tableNumber={tableNumber} />}
     </div>
   );

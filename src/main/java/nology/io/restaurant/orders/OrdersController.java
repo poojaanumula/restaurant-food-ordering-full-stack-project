@@ -48,8 +48,8 @@ public OrdersController(OrderService orderService) {
     }
     @DeleteMapping("/{id}")
         public ResponseEntity<Void> deleteOrder(@PathVariable Long id) {
-            orderService.deleteOrderById(id);  
-            return ResponseEntity.noContent().build();  
+            orderService.deleteOrderById(id);    
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 }
 

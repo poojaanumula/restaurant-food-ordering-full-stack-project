@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { menuItemSchema, type MenuItem } from "./SchemaFile";
 import Classes from "./Dashboard.module.scss";
+import axios from "axios";
+import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Dashboard = () => {
   const {
@@ -14,15 +17,73 @@ const Dashboard = () => {
     resolver: zodResolver(menuItemSchema),
   });
 
-  const onSubmit = (data: MenuItem) => {
-    postMenu(data)
-      .then(() => alert("Menu item added"))
-      .catch((err) => console.error("Add failed:", err))
-      .finally(() => reset());
-  };
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
+  const handleLoginSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!username || !password) {
+      toast.success("Enter username and password");
+      return;
+    }
 
+    try {
+      await axios.get("http://localhost:8080/menu", {
+        headers: {
+          Authorization: "Basic " + btoa(`${username}:${password}`),
+        },
+      });
+      setLoggedIn(true);
+    } catch (error) {
+      toast.success("Invalid username or password");
+      setLoggedIn(false);
+    }
+  };
+  const onSubmit = (data: MenuItem) => {
+    postMenu(data, username, password)
+      .then(() => {
+        toast.success("Menu item added");
+        reset();
+      })
+      .catch((err) => {
+        console.error("Add failed:", err);
+        toast.success("Add failed: Check credentials or data");
+      });
+  };
+  if (!loggedIn) {
+    return (
+      <div className={Classes.background}>
+        <h2 className={Classes.title}>Login</h2>
+        <form onSubmit={handleLoginSubmit} data-testid="login-form">
+          <div className={Classes.section}>
+            <label className={Classes.name}>Username</label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className={Classes.textBox}
+              required
+            />
+          </div>
+          <div className={Classes.section}>
+            <label className={Classes.name}>Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className={Classes.textBox}
+              required
+            />
+          </div>
+          <button type="submit" className={Classes.btn}>
+            Login
+          </button>
+        </form>
+      </div>
+    );
+  }
   return (
-    <div className={Classes.background}>
+    <div className={Classes.background} title="form">
       <h2 className={Classes.title}>Add a new Item</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>

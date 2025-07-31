@@ -9,9 +9,11 @@ interface TableNumber {
 }
 const Menuitems = ({ tableNumber }: TableNumber) => {
   const [menuItems, setMenuItems] = useState<Menu[]>([]);
+
   const [selectedItem, setSelectedItem] = useState<
     { itemName: string; itemPrice: string }[]
   >([]);
+
   const [showOrders, setShowOrders] = useState(false);
 
   useEffect(() => {
@@ -68,8 +70,7 @@ const Menuitems = ({ tableNumber }: TableNumber) => {
               className={Classes.orders}
               onClick={() => setShowOrders(true)}
             >
-              View Your Order
-              {selectedItem.length} Items{" "}
+              View Order - {selectedItem.length} Items
             </button>
           )}
           <h3 className={Classes.heading}>ENTREES</h3>

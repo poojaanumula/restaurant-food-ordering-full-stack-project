@@ -1,11 +1,11 @@
 import Classes from "./Navbar.module.scss";
 import { Link } from "react-router-dom";
-
+ 
 const Navbar = () => {
   return (
     <div className={Classes.navbar}>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <h1>Spicy Corner</h1>
+        <h1 >Spicy Corner</h1>
         <img src="./images/chill.png" style={{ width: "100px" }} />
       </div>
 

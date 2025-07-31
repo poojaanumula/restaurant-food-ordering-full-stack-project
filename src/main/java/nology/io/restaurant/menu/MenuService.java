@@ -20,7 +20,6 @@ public class MenuService {
         newMenu.setItemPrice(data.getItemPrice());
         newMenu.setCategory(data.getCategory());
         return menuRepository.save(newMenu);
-
 	}
 
 	public List<Menu> getAllMenu() {

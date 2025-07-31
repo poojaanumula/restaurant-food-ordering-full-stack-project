@@ -8,7 +8,7 @@
   text-align: center;
 }
 .background {
-  background-color: rgb(246, 116, 93);
+  background-color:#FAFAD2;
   width: 100%;
   height: 580vh;
   display: flex;
@@ -28,6 +28,7 @@
   font-size: 35px;
   font-family: cursive;
   font-weight: bold;
+  color:black;
 }
 .number {
   font-size: 15px;
@@ -40,6 +41,7 @@
   margin-top: 10px;
   font-family: cursive;
   font-size: 15px;
+  color:black;
   text-align: center;
 }
 .input {
@@ -63,8 +65,14 @@
   border: 2px solid white;
   margin-top: 10px;
   cursor: pointer;
-  padding: 5px;
-  background-color: red;
+  padding: 6px;
+  background-color: rgb(0, 0, 0);
   color: white;
   border-radius: 10px;
+  &:hover{
+    background-color: greenyellow;
+    border:2px solid black;
+    transition: 1s;
+    color:black;
+  }
 }

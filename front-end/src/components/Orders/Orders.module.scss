@@ -1,14 +1,14 @@
 .fullPage {
   position: fixed;
   inset: 0;
-  background-color: rgb(246, 116, 93);
+  background-color:#FAFAD2;
   overflow-y: auto;
   padding-top: 50px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   z-index: 1000;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 .closeBtn {
@@ -35,13 +35,17 @@
 }
 .placeOrder {
   padding: 10px;
-  border: 1px solid white;
+  border: 2px solid black;
+  font-size: 15px;
+  font-weight: bold;
+  color:white;
+  background-color: black;
   margin-top: 10px;
   border-radius: 10px;
   width: 150px;
   &:hover {
-    background-color: red;
-    color: white;
+    background-color: greenyellow;
+    color: black;
     transition: 1s;
     cursor: pointer;
   }
@@ -52,15 +56,49 @@
 }
 .delete {
   padding: 5px;
-  border: 1.5px solid white;
+  border: 2.5px solid red;
   width: 100px;
   background-color: transparent;
   font-weight: bold;
-  color: white;
+  color:black;
   &:hover {
     background: red;
     color: white;
     transition: 1s;
     cursor: pointer;
+  }
+}
+.modal {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dff0d8;
+  border:3px solid yellow;
+  color: #3c763d;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideDown 0.4s ease;
+}
+
+.modalClose {
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+@keyframes slideDown {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 20px;
+    opacity: 1;
   }
 }
