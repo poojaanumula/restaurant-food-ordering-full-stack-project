@@ -42,8 +42,7 @@
     <li>Mockito – Unit testing backend logic</li>
   <li>Role-Based Authentication – Access control for Customers, Chefs, and Managers</li>
 </ul>
-<h2>Screenshots</h2>
-<p align="center"> 
+<h2>Screenshots</h2> 
   <img src="docs/menu.png" alt="Customer Menu" width="45%" /> 
 <h3>Installation setup</h3>
 <h4>Clone the repository</h4>
